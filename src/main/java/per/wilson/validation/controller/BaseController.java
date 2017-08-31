@@ -27,7 +27,7 @@ public interface BaseController {
     @ApiImplicitParams({@ApiImplicitParam(name = "vo", value = "测试实体", required = true, dataType = "UncustomVO", paramType = "body")})
     String uncustom(@RequestBody UncustomVO vo);
 
-    @PostMapping("/param/{id}")
+    @PostMapping("/worker/{id}")
     @ApiOperation("参数仅普通类型")
     @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "主键", required = true, dataType = "long", paramType = "path")/*,
             @ApiImplicitParam(name = "vo", value = "职员信息", required = true, dataType = "WorkerVO", paramType = "body")*/})

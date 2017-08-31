@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * 描述：
  * 创建日期：2017/8/29
  */
-public class AllTest {
+public class PatternTest {
     @Test
     public void testRegexp() {
         //输出true
