@@ -17,7 +17,6 @@ public class WorkerValidator implements ConstraintValidator<WorkerAnnotation,Str
     @Override
     public void initialize(WorkerAnnotation constraintAnnotation) {
         allEnum = constraintAnnotation.target();
-        System.out.println(constraintAnnotation.value());
     }
 
     @Override

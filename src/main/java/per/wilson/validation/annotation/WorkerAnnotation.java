@@ -33,6 +33,4 @@ public @interface WorkerAnnotation {
     Class<? extends Payload>[] payload() default {};
 
     WorkerEnum target();
-
-    String value() default "Worker";
 }
