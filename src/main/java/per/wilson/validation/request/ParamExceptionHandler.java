@@ -24,7 +24,7 @@ public class ParamExceptionHandler {
     private HttpServletRequest request;
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    public Object MethodArgumentNotValidHandler(MethodArgumentNotValidException exception) throws Exception {
+    public Object MethodArgumentNotValidHandler(MethodArgumentNotValidException exception){
         //按需重新封装需要返回的错误信息
         List<ParamValidationResult> paramValidationResults = new ArrayList<>();
         //解析原错误信息，封装后返回，此处返回非法的字段名称，原始值，错误信息
