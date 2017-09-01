@@ -27,12 +27,11 @@ public class ParamExceptionHandler {
     public Object MethodArgumentNotValidHandler(MethodArgumentNotValidException exception){
         //按需重新封装需要返回的错误信息
         List<ParamValidationResult> paramValidationResults = new ArrayList<>();
-        //解析原错误信息，封装后返回，此处返回非法的字段名称，原始值，错误信息
+        //解析原错误信息，封装后返回，此处返回非法的字段名称，错误信息
         for (FieldError error : exception.getBindingResult().getFieldErrors()) {
             ParamValidationResult validationResult = new ParamValidationResult();
             validationResult.setMessage(error.getDefaultMessage());
             validationResult.setParam(error.getField());
-            System.out.println(request.getRequestURL());
             paramValidationResults.add(validationResult);
         }
         return new ResultMsg(ResultCode.CODE_401, paramValidationResults);
