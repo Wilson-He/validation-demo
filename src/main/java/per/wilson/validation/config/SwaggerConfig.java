@@ -3,6 +3,7 @@ package per.wilson.validation.config;
 import com.google.common.collect.Sets;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.RequestMethod;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.builders.ResponseMessageBuilder;
@@ -42,6 +43,8 @@ public class SwaggerConfig {
     @Bean
     public Docket validationDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .useDefaultResponseMessages(false)
+                .globalResponseMessage(RequestMethod.POST,responseMessageList)
                 .groupName("自定义校验接口文档")
                 .apiInfo(apiInfo())
                 .produces(Sets.newHashSet("application/json"))
